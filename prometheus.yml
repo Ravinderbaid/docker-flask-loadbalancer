@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "flask-app-1"
+    static_configs:
+      - targets: ["docker-flask_flask-app_1:5000"]
+  - job_name: "flask-app-2"
+    static_configs:
+      - targets: ["docker-flask_flask-app_2:5000"]
+  - job_name: "flask-app-3"
+    static_configs:
+      - targets: ["docker-flask_flask-app_3:5000"]
+  - job_name: "node_exporter"
+    static_configs:
+      - targets: ["node_exporter:9100"]
